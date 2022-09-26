@@ -24,14 +24,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         priceGasolina.delegate = self
     }
     
-//    func calcularCombustivel() {
-//        var calculo: Double = Double(Double(priceAlcool) / Double(priceGasolina))
-//        if calculo < 0.70 {
-//            print(titleLabel)
-//        } else {
-//            print("oi")
-//        }
-//    }
+    func calcularCombustivel() {
+        var calculo: Double = Double(priceAlcool / priceGasolina)
+        if calculo < 0.70 {
+            print(titleLabel ?? "error")
+        } else {
+            print("oi")
+        }
+    }
 
     func configsButtonAndLabel() {
         calcPriceButton.backgroundColor = .blue
@@ -49,6 +49,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
         priceGasolina.textAlignment = .center
        
     }
+    
+    
+    @IBAction func tappedCalcButton(_ sender: UIButton) {
+     calcularCombustivel()
+    }
+    
     
 //    func textFieldDidBeginEditing(_ textField: UITextField) {
 //        <#code#>
